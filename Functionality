@@ -1,0 +1,8 @@
+import pandas as pd
+import seaborn as sb
+
+df = sb.load_dataset('tips')
+print(df.head())
+
+df = df.assign(Percentage = lambda x: (x['tip'] /x['total_bill']  * 100)) 
+print(df.head())
